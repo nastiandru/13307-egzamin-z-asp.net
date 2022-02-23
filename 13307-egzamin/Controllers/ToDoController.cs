@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using _13307_egzamin.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _13307_egzamin.Controllers
 {
@@ -22,7 +23,7 @@ namespace _13307_egzamin.Controllers
         // GET: ToDoController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(tasks.FirstOrDefault(x => x.Id == id));
         }
 
         // GET: ToDoController/Create
